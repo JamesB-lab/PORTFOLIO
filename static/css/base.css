@@ -4,6 +4,7 @@
     bottom: 0;
     min-width: 100%;
     min-height: 100%;
+    z-index: -1;
 }
 
 
@@ -14,8 +15,10 @@ body {
 
 header {
     border-bottom: 1px solid #999;
-    margin-bottom: 2rem;
+    /* margin-bottom: 2rem; */
     display: flex;
+    background-color: #999;
+    width: 100%;
 }
 
 header h1 a {

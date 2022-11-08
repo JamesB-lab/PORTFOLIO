@@ -1,7 +1,16 @@
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, TemplateView
 from .models import Post
 
 from django.shortcuts import render
+
+class LandingPageView(TemplateView):
+    template_name = 'landing.html'
+
+class AboutPageView(TemplateView):
+    template_name = 'about.html'
+
+class CVPageView(TemplateView):
+    template_name = 'cv.html'
 
 
 class BlogListView(ListView):

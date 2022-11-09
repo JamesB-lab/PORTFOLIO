@@ -11,6 +11,7 @@
 body {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 18px;
+    background-color: #01284a;
 }
 
 header {
@@ -57,3 +58,12 @@ header h1 a {
 .post-entry h2 a:hover {
     color: red;
 }
+
+.my_card {
+    margin-left: 130px;
+    margin-top: 30px;
+}
+
+/* .card-text {
+    color: red;
+} */

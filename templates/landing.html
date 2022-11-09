@@ -1,8 +1,20 @@
 {% extends 'base.html' %}
 {% load static %}
 
+<head>
+    <link rel="stylesheet" href= "{% static 'css/base.css' %}">
+</head>
+
 {% block content %}
 
-<h1>Test landing</h1>
+{% comment %} <h1>Test landing</h1> {% endcomment %}
+
+<div class="card my_card" style="width: 18rem;">
+    <img class="card-img-top" src="{% static 'github_photo_square.jpg' %}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">James Booth | Data Scientist & Python Developer</h5>
+      <p class="card-text">Data scientist with a background in process and manufacturing engineering. Experience in predictive analytics, modeling, machine learning, and data visualization. Looking to develop innovative solutions, work colaboratively & learn.</p>
+    </div>
+  </div>
 
 {% endblock content %}

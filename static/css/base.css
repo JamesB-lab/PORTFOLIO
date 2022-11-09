@@ -59,11 +59,53 @@ header h1 a {
     color: red;
 }
 
+
+.wrapping_div {
+    display: flex;
+}
+
 .my_card {
     margin-left: 130px;
+    margin-top: 50px;
+}
+
+.welcome_text {
+    color: whitesmoke;
+    justify-content: right;
+    margin-top: 270px;
+    margin-left: 50px;
+}
+
+.wrapper_about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0 auto;
+    max-width: 940px;
+    justify-items: center;
     margin-top: 30px;
 }
 
-/* .card-text {
-    color: red;
-} */
+.wrapper_about div:nth-of-type(even) {
+    grid-column: 2;
+}
+
+
+.about_card2 {
+    grid-row: 2;
+}
+
+.about_card3 {
+    grid-row: 3;
+}
+
+.about_card4 {
+    grid-row: 4;
+}
+
+.about_card5 {
+    grid-row: 5;
+}
+
+.about_card6 {
+    grid-row: 6;
+}

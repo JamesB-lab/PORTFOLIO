@@ -59,6 +59,10 @@ header h1 a {
     color: red;
 }
 
+.navbar-brand {
+    margin-left: 16px;
+}
+
 
 .wrapping_div {
     display: flex;
@@ -108,4 +112,31 @@ header h1 a {
 
 .about_card6 {
     grid-row: 6;
+}
+
+.fa-python {
+    padding-right: 13px;
+}
+
+.fa-github {
+    padding-left: 16px;
+}
+
+.fa-linkedin-square {
+    padding-left: 16px;
+}
+
+.fa-phone {
+    padding-left: 16px;
+}
+
+.fa-envelope {
+    padding-left: 16px;
+}
+
+.button-links {
+    display: flex;
+    justify-content: right;
+    width: 100%;
+    margin-right: 16px;
 }

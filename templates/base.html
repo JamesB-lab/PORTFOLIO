@@ -9,7 +9,7 @@
     integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
     crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/475beb4e8f.js" crossorigin="anonymous"></script>
   <title>Portfolio</title>
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400" rel="stylesheet">
   <link rel="stylesheet" href="{% static 'css/base.css' %}">
@@ -17,6 +17,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="{% url 'home' %}">jbooth.dev</a>
+  <i class="fab fa-python" style="font-size:24px"></i>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
     aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -46,11 +47,12 @@
       </li>
     </ul>
     
-    <i class="fa fa-github" style="font-size:36px"></i>
-    <i class="fa fa-linkedin-square" style="font-size:36px"></i>
-    <i class="fa fa-phone" style="font-size:33px"></i>
-    <i class="fa fa-envelope" style="font-size:34px"></i>
-
+<div class="button-links">
+    <a class="nav-link" href="https://github.com/JamesB-lab" target="_blank"><i class="fa fa-github" style="font-size:28px"></i></a>
+    <a class="nav-link" href="https://www.linkedin.com/in/james-booth-817885151/" target="_blank"><i class="fa fa-linkedin-square" style="font-size:28px"></i></a>
+    <a class="nav-link" href="tel:+447720266727"><i class="fa fa-phone" style="font-size:28px"></i></a>
+    <a class="nav-link" href="mailto:j.r.booth01@gmail.com" target="_blank"><i class="fa fa-envelope" style="font-size:28px"></i></a>
+</div>
 
 
 

@@ -4,9 +4,14 @@
 
 {% block content %}
     {% for post in object_list %}
-    <div class="post-entry">
-        <h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
-        <p>{{ post.body }}</p>
+    <div class="card post-entry" style="width: 50%;">
+        <div class="card-header">
+            <a class="nav-link" href="{% url 'post_detail' post.pk %}">{{ post.title }}</a>
+          </div>
+          <img class="card-img-top" src="{% static 'tableau.jpg' %}" alt="Card image cap">
+        <div class="card-body">
+        <p class="card-text">{{ post.body }}</p>
+        </div>
     </div>
     {% endfor %}
 {% endblock content %}

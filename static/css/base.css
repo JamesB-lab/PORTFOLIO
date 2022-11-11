@@ -78,6 +78,8 @@ header h1 a {
     justify-content: right;
     margin-top: 270px;
     margin-left: 50px;
+    margin-right: 50px;
+    max-width: 600px;
 }
 
 .wrapper_about {

@@ -3,6 +3,51 @@
 
 {% block content %}
 
-<h1>Test CV</h1>
+{% comment %}  {% endcomment %}
+<div class="cv_wrapper">
+<div class="container_contact">
+    <form action="action_page.php">
+  
+      <label for="fname">Name</label>
+      <input type="text" id="fname" name="firstname" placeholder="Your name..">
+  
+      <label for="lname">Company</label>
+      <input type="text" id="lname" name="lastname" placeholder="Your company name..">
+
+      <label for="lname">E-mail</label>
+      <input type="text" id="lname" name="lastname" placeholder="Your e-mail address..">
+
+      <label for="lname">Phone</label>
+      <input type="text" id="lname" name="lastname" placeholder="Your phone number..">
+  
+      <label for="country">Location</label>
+      <select id="country" name="country">
+        <option value="australia">Remote</option>
+        <option value="canada">Hybrid</option>
+        <option value="usa">Onsite</option>
+      </select>
+  
+      <label for="subject">Subject</label>
+      <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+  
+      <input type="submit" value="Submit">
+  
+    </form>
+  </div>
+  <div class="card contact_card" style="width: 18rem;">
+    <img class="card-img-top" src="{% static 'headshot.jpg' %}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">James Booth | Data Scientist & Python Developer</h5>
+      <div class="contact_card_grid">
+      <p>CV</p><a class="nav-link" href="{% static 'JBooth_CV.pdf' %}" download><i class="fa fa-download" aria-hidden="true"></i></a>
+      <p>E-mail</p><a class="contact_email" target="_blank">j.r.booth01@gmail.com</a>
+      <p>Phone</p><a href="tel:+447720266727">+44 7720266727</a>
+      <p>Github</p><a class="nav-link" href="https://github.com/JamesB-lab" target="_blank"><i class="fa fa-github" style="font-size:28px; padding-left: 0px;"></i></a>
+      <p>LinkedIn</p><a class="nav-link" href="https://www.linkedin.com/in/james-booth-817885151/" target="_blank"><i class="fa fa-linkedin-square pl-0" style="font-size:28px; padding-left: 0px;"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 {% endblock content %}

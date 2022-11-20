@@ -214,3 +214,12 @@ input[type=submit]:hover {
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
+
+label.required::after {
+    content: ' *';
+    color: red;
+}
+
+.errorlist {
+    color: red;
+}

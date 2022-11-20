@@ -1,14 +1,15 @@
 from django import forms
 from django.conf import settings
 from django.core.mail import send_mail
-
-# TODO: add validation in the form using validators=[...]
+from django.core.validators import validate_email
 
 
 class EmailForm(forms.Form):
+    required_css_class = 'required'
+
     name = forms.CharField(label='Name')
     company = forms.CharField(label='Company')
-    email = forms.CharField(label='E-mail')
+    email = forms.CharField(label='E-mail', validators=[validate_email])
     phone = forms.CharField(label='Phone')
     location = forms.CharField(label='Location',
                                widget=forms.Select(

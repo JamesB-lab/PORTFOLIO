@@ -10,7 +10,13 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
+from os import environ
 from pathlib import Path
+
+from dotenv import load_dotenv
+
+# Load secrets from .env
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -120,3 +126,14 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [str(BASE_DIR.joinpath('static'))]
+
+# https://medium.com/hackernoon/the-easiest-way-to-send-emails-with-django-using-ses-from-aws-62f3d3d33efd
+EMAIL_BACKEND = 'django_ses.SESBackend'
+AWS_ACCESS_KEY_ID = environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = environ.get('AWS_SECRET_ACCESS_KEY')
+
+# Check configuration was properly set:
+if AWS_ACCESS_KEY_ID is None:
+    raise Exception('empty environment variable for AWS_ACCESS_KEY_ID')
+if AWS_SECRET_ACCESS_KEY is None:
+    raise Exception('empty environment variable for AWS_SECRET_ACCESS_KEY')

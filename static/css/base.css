@@ -214,3 +214,37 @@ input[type=submit]:hover {
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
+
+.post-detail-card {
+    width: 80%;
+}
+
+.wrapper_post-detail {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 0 auto;
+    max-width: auto;
+    justify-items: center;
+    margin-top: 30px;
+    border: red;
+    border-width: 25px;
+}
+
+.post-entry {
+    padding: 15px;
+}
+
+pre {
+    white-space: pre-wrap;
+    background-color: black;
+    color: #31B4AF;
+    padding: 15px;
+}
+
+.post-entry img {
+    max-width: 100%;
+}
+
+.post-entry p {
+    margin-bottom: 20px;
+}

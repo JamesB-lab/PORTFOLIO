@@ -8,6 +8,8 @@ class Post(models.Model):
         on_delete=models.CASCADE,
     )
     body = models.TextField()
+    imagePath = models.CharField(max_length=200)
+    thumbnail = models.TextField()
 
     def __str__(self):
         return self.title

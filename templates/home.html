@@ -14,7 +14,8 @@
     </div>
     <div class="card-footer">
         <div class="skill-badges">
-            {% if post.skill_python %}<i class="fa-brands fa-python" style="padding-right: 0;"></i>{% endif %}
+            <span>Skills:</span>
+            {% if post.skill_python %}<i class="fa-brands fa-python"></i>{% endif %}
             {% if post.skill_excel %}<i class="fa-regular fa-file-excel"></i>{% endif %}
             {% if post.skill_r %}<i class="fa-brands fa-r-project"></i>{% endif %}
             {% if post.skill_sql %}<i class="fa-solid fa-database"></i>{% endif %}
@@ -22,6 +23,7 @@
             {% if post.skill_raspberry_pi %}<i class="fa-brands fa-raspberry-pi"></i>{% endif %}
             {% if post.skill_machine_learning %}<i class="fa-solid fa-microchip"></i>{% endif %}
             {% if post.skill_descriptive_analytics %}<i class="fa-solid fa-chart-simple"></i>{% endif %}
+            {% if post.skill_six_sigma %}<i>6&sigma;</i>{% endif %}
         </div>
     </div>
 </div>

@@ -250,7 +250,9 @@ pre {
 }
 
 .skill-badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+    display: inline-block;
+}
+
+.skill-badges span, .skill-badges i {
+    padding-right: 10px;
 }

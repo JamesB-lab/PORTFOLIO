@@ -1,7 +1,8 @@
-from django.views.generic import ListView, DetailView, TemplateView
+from django.shortcuts import render
+from django.views.generic import DetailView, ListView, TemplateView
+
 from .models import Post
 
-from django.shortcuts import render
 
 class LandingPageView(TemplateView):
     template_name = 'landing.html'
@@ -16,6 +17,9 @@ class CVPageView(TemplateView):
 class BlogListView(ListView):
     model = Post
     template_name = 'home.html'
+
+    def get_queryset(self):
+        return super().get_queryset().filter(active=True)
 
 
 class BlogDetailView(DetailView):

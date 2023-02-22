@@ -8,9 +8,9 @@
         <div class="card-header">
             <a class="nav-link" href="{% url 'post_detail' post.pk %}">{{ post.title }}</a>
           </div>
-          <img class="card-img-top" src="{% static 'tableau.jpg' %}" alt="Card image cap">
+          <img class="card-img-top" src="{% static post.imagePath %}" alt="Card image cap">
         <div class="card-body">
-        <p class="card-text">{{ post.body }}</p>
+        <p class="card-text">{{ post.thumbnail }}</p>
         </div>
     </div>
     {% endfor %}

@@ -9,7 +9,4 @@ md = markdown.Markdown(extensions=['extra'])
 @register.filter()
 @stringfilter
 def markdown(value):
-    print(value)
-    valueMarkdown = md.convert(value)
-    print(valueMarkdown)
-    return valueMarkdown
+    return md.convert(value)

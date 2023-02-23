@@ -19,7 +19,7 @@ class BlogListView(ListView):
     template_name = 'home.html'
 
     def get_queryset(self):
-        return super().get_queryset().filter(active=True)
+        return super().get_queryset().filter(active=True).order_by('-created_at')
 
 
 class BlogDetailView(DetailView):

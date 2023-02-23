@@ -6,7 +6,7 @@
 {% for post in object_list %}
 <div class="card post-entry" style="width: 50%;">
     <a class="nav-link" href="{% url 'post_detail' post.pk %}">
-        <div class="card-header">{{ post.title }</div>
+        <div class="card-header">{{ post.title }}</div>
         <img class="card-img-top" src="{% static post.imagePath %}" alt="Card image cap">
         <div class="card-body">
             <p class="card-text">{{ post.thumbnail }}</p>

@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.timezone import now
 
 
 class Post(models.Model):
@@ -11,6 +12,7 @@ class Post(models.Model):
         'auth.User',
         on_delete=models.CASCADE,
     )
+    created_at = models.DateTimeField(default=now())
     body = models.TextField()
     imagePath = models.CharField(max_length=200)
     thumbnail = models.TextField()

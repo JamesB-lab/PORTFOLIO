@@ -3,15 +3,29 @@
 {% load static %}
 
 {% block content %}
-    {% for post in object_list %}
-    <div class="card post-entry" style="width: 50%;">
-        <div class="card-header">
-            <a class="nav-link" href="{% url 'post_detail' post.pk %}">{{ post.title }}</a>
-          </div>
-          <img class="card-img-top" src="{% static post.imagePath %}" alt="Card image cap">
-        <div class="card-body">
+{% for post in object_list %}
+<div class="card post-entry" style="width: 50%;">
+    <div class="card-header">
+        <a class="nav-link" href="{% url 'post_detail' post.pk %}">{{ post.title }}</a>
+    </div>
+    <img class="card-img-top" src="{% static post.imagePath %}" alt="Card image cap">
+    <div class="card-body">
         <p class="card-text">{{ post.thumbnail }}</p>
+    </div>
+    <div class="card-footer">
+        <div class="skill-badges">
+            <span>Skills:</span>
+            {% if post.skill_python %}<i class="fa-brands fa-python"></i>{% endif %}
+            {% if post.skill_excel %}<i class="fa-regular fa-file-excel"></i>{% endif %}
+            {% if post.skill_r %}<i class="fa-brands fa-r-project"></i>{% endif %}
+            {% if post.skill_sql %}<i class="fa-solid fa-database"></i>{% endif %}
+            {% if post.skill_aws %}<i class="fa-brands fa-aws"></i>{% endif %}
+            {% if post.skill_raspberry_pi %}<i class="fa-brands fa-raspberry-pi"></i>{% endif %}
+            {% if post.skill_machine_learning %}<i class="fa-solid fa-microchip"></i>{% endif %}
+            {% if post.skill_descriptive_analytics %}<i class="fa-solid fa-chart-simple"></i>{% endif %}
+            {% if post.skill_six_sigma %}<i>6&sigma;</i>{% endif %}
         </div>
     </div>
-    {% endfor %}
+</div>
+{% endfor %}
 {% endblock content %}

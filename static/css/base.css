@@ -248,3 +248,11 @@ pre {
 .post-entry p {
     margin-bottom: 20px;
 }
+
+.skill-badges {
+    display: inline-block;
+}
+
+.skill-badges span, .skill-badges i {
+    padding-right: 10px;
+}

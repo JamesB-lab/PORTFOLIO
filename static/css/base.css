@@ -217,6 +217,7 @@ input[type=submit]:hover {
 
 .post-detail-card {
     width: 80%;
+    max-width: 800px;
 }
 
 .wrapper_post-detail {
@@ -226,8 +227,15 @@ input[type=submit]:hover {
     max-width: auto;
     justify-items: center;
     margin-top: 30px;
-    border: red;
-    border-width: 25px;
+}
+
+.wrapper_post-entries {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 0 auto;
+    max-width: auto;
+    justify-items: center;
+    margin-top: 30px;
 }
 
 .post-entry {
@@ -243,7 +251,7 @@ pre {
 
 .post-entry img {
     max-width: 100%;
-    width: 100%
+    width: 100%;
 }
 
 .post-entry p {
@@ -265,7 +273,8 @@ pre {
 }
 
 .post-entry table {
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 20px;
-    max-width: 100%;
-    width: 100%
+    width: 80%;
 }

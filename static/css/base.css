@@ -243,6 +243,7 @@ pre {
 
 .post-entry img {
     max-width: 100%;
+    width: 100%
 }
 
 .post-entry p {
@@ -253,6 +254,18 @@ pre {
     display: inline-block;
 }
 
-.skill-badges span, .skill-badges i {
+.skill-badges span,
+.skill-badges i {
     padding-right: 10px;
+}
+
+.post-entry th {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.post-entry table {
+    margin-bottom: 20px;
+    max-width: 100%;
+    width: 100%
 }

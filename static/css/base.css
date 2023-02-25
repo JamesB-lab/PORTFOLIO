@@ -1,280 +1,288 @@
 #myVideo {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-    z-index: -1;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
 }
 
-
 body {
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 18px;
-    background-color: #01284a;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 18px;
+  background-color: #01284a;
 }
 
 header {
-    border-bottom: 1px solid #999;
-    /* margin-bottom: 2rem; */
-    display: flex;
-    background-color: #999;
-    width: 100%;
+  border-bottom: 1px solid #999;
+  /* margin-bottom: 2rem; */
+  display: flex;
+  background-color: #999;
+  width: 100%;
 }
 
 header h1 a {
-    color: red;
-    text-decoration: none;
+  color: red;
+  text-decoration: none;
 }
 
 .nav-left {
-    margin-right: auto;
+  margin-right: auto;
 }
 
 .nav-right {
-    display: flex;
-    padding-top: 2rem;
+  display: flex;
+  padding-top: 2rem;
 }
 
 .post-entry {
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 
 .post-entry h2 {
-    margin: 0.5rem 0;
+  margin: 0.5rem 0;
 }
 
 .post-entry h2 a,
 .post-entry h2 a:visited {
-    color: blue;
-    text-decoration: none;
+  color: blue;
+  text-decoration: none;
 }
 
 .post-entry p {
-    margin: 0;
-    font-weight: 400;
+  margin: 0;
+  font-weight: 400;
 }
 
 .post-entry h2 a:hover {
-    color: red;
+  color: red;
 }
 
 .navbar-brand {
-    margin-left: 16px;
+  margin-left: 16px;
 }
 
-
 .wrapping_div {
-    display: flex;
+  display: flex;
 }
 
 .my_card {
-    margin-left: 130px;
-    margin-top: 50px;
+  margin-left: 130px;
+  margin-top: 50px;
 }
 
 .welcome_text {
-    color: whitesmoke;
-    justify-content: right;
-    margin-top: 270px;
-    margin-left: 50px;
-    margin-right: 50px;
-    max-width: 600px;
+  color: whitesmoke;
+  justify-content: right;
+  margin-top: 270px;
+  margin-left: 50px;
+  margin-right: 50px;
+  max-width: 600px;
 }
 
 .wrapper_about {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin: 0 auto;
-    max-width: 940px;
-    justify-items: center;
-    margin-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 0 auto;
+  max-width: 940px;
+  justify-items: center;
+  margin-top: 30px;
 }
 
 .wrapper_about div:nth-of-type(even) {
-    grid-column: 2;
+  grid-column: 2;
 }
 
-
 .about_card2 {
-    grid-row: 2;
+  grid-row: 2;
 }
 
 .about_card3 {
-    grid-row: 3;
+  grid-row: 3;
 }
 
 .about_card4 {
-    grid-row: 4;
+  grid-row: 4;
 }
 
 .about_card5 {
-    grid-row: 5;
+  grid-row: 5;
 }
 
 .about_card6 {
-    grid-row: 6;
+  grid-row: 6;
 }
 
 .fa-python {
-    padding-right: 13px;
+  padding-right: 13px;
 }
 
 .fa-github {
-    padding-left: 16px;
+  padding-left: 16px;
 }
 
 .fa-linkedin-square {
-    padding-left: 16px;
+  padding-left: 16px;
 }
 
 .fa-phone {
-    padding-left: 16px;
+  padding-left: 16px;
 }
 
 .fa-envelope {
-    padding-left: 16px;
+  padding-left: 16px;
 }
 
 .button-links {
-    display: flex;
-    justify-content: right;
-    width: 100%;
-    margin-right: 16px;
+  display: flex;
+  justify-content: right;
+  width: 100%;
+  margin-right: 16px;
 }
 
-
-
-
-
-
 /* Style inputs with type="text", select elements and textareas */
-input[type=text],
+input[type="text"],
 select,
 textarea {
-    width: 100%;
-    /* Full width */
-    padding: 12px;
-    /* Some padding */
-    border: 1px solid #ccc;
-    /* Gray border */
-    border-radius: 4px;
-    /* Rounded borders */
-    box-sizing: border-box;
-    /* Make sure that padding and width stays in place */
-    margin-top: 6px;
-    /* Add a top margin */
-    margin-bottom: 16px;
-    /* Bottom margin */
-    resize: vertical
-        /* Allow the user to vertically resize the textarea (not horizontally) */
+  width: 100%;
+  /* Full width */
+  padding: 12px;
+  /* Some padding */
+  border: 1px solid #ccc;
+  /* Gray border */
+  border-radius: 4px;
+  /* Rounded borders */
+  box-sizing: border-box;
+  /* Make sure that padding and width stays in place */
+  margin-top: 6px;
+  /* Add a top margin */
+  margin-bottom: 16px;
+  /* Bottom margin */
+  resize: vertical;
+  /* Allow the user to vertically resize the textarea (not horizontally) */
 }
 
 /* Style the submit button with a specific background color etc */
-input[type=submit] {
-    background-color: #04AA6D;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+input[type="submit"] {
+  background-color: #04aa6d;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 /* When moving the mouse over the submit button, add a darker green color */
-input[type=submit]:hover {
-    background-color: #45a049;
+input[type="submit"]:hover {
+  background-color: #45a049;
 }
 
 /* Add a background color and some padding around the form */
 .container_contact {
-    border-radius: 5px;
-    background-color: whitesmoke;
-    padding: 20px;
-    max-width: 50%;
+  border-radius: 5px;
+  background-color: whitesmoke;
+  padding: 20px;
+  max-width: 50%;
 }
 
-
-
 .cv_wrapper {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    padding-left: 90px;
-    padding-right: 90px;
-    padding-top: 30px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding-left: 90px;
+  padding-right: 90px;
+  padding-top: 30px;
 }
 
 .contact_card {
-    border: red;
-    /* max-width: 100%; */
-
+  border: red;
+  /* max-width: 100%; */
 }
 
 .contact_card_grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .post-detail-card {
-    width: 80%;
-    max-width: 800px;
+  width: 80%;
+  max-width: 800px;
 }
 
 .wrapper_post-detail {
-    display: grid;
-    grid-template-columns: 1fr;
-    margin: 0 auto;
-    max-width: auto;
-    justify-items: center;
-    margin-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 0 auto;
+  max-width: auto;
+  justify-items: center;
+  margin-top: 30px;
 }
 
 .wrapper_post-entries {
-    display: grid;
-    grid-template-columns: 1fr;
-    margin: 0 auto;
-    max-width: auto;
-    justify-items: center;
-    margin-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 0 auto;
+  max-width: auto;
+  justify-items: center;
+  margin-top: 30px;
 }
 
 .post-entry {
-    padding: 15px;
+  padding: 15px;
 }
 
 pre {
-    white-space: pre-wrap;
-    background-color: black;
-    color: #31B4AF;
-    padding: 15px;
+  white-space: pre-wrap;
+  background-color: black;
+  color: #31b4af;
+  padding: 15px;
 }
 
 .post-entry img {
-    max-width: 100%;
-    width: 100%;
+  max-width: 100%;
+  width: 100%;
 }
 
 .post-entry p {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .skill-badges {
-    display: inline-block;
+  display: inline-block;
 }
 
 .skill-badges span,
 .skill-badges i {
-    padding-right: 10px;
+  padding-right: 10px;
 }
 
 .post-entry th {
-    margin-bottom: 20px;
-    text-align: left;
+  margin-bottom: 20px;
+  text-align: left;
 }
 
 .post-entry table {
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 20px;
-    width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  width: 80%;
+}
+
+.icon {
+  display: inline-flex;
+  align-self: center;
+  padding-right: 10px;
+}
+
+.icon svg,
+.icon img {
+  height: 1em;
+  width: 1em;
+  fill: currentColor;
+}
+
+.icon.baseline svg,
+.icon img {
+  top: 0.125em;
+  position: relative;
 }

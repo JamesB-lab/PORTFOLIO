@@ -27,6 +27,7 @@ class Post(models.Model):
     skill_machine_learning = models.BooleanField(default=False)
     skill_descriptive_analytics = models.BooleanField(default=False)
     skill_six_sigma = models.BooleanField(default=False)
+    skill_tableau = models.BooleanField(default=False)
 
     def __str__(self):
         return self.title

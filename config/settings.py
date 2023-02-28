@@ -132,3 +132,14 @@ USE_TZ = True
 # STATIC_ROOT = BASE_DIR / 'staticroot'
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [str(BASE_DIR.joinpath('static'))]
+
+# https://medium.com/hackernoon/the-easiest-way-to-send-emails-with-django-using-ses-from-aws-62f3d3d33efd
+EMAIL_BACKEND = 'django_ses.SESBackend'
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+
+# Check configuration was properly set:
+if not DEBUG and AWS_ACCESS_KEY_ID is None:
+    raise Exception('empty environment variable for AWS_ACCESS_KEY_ID')
+if not DEBUG and AWS_SECRET_ACCESS_KEY is None:
+    raise Exception('empty environment variable for AWS_SECRET_ACCESS_KEY')

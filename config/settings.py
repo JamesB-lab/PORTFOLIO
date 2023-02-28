@@ -32,7 +32,7 @@ ALLOWED_HOSTS = []
 if not DEBUG:
     ALLOWED_HOSTS = [
         'jbooth.dev',
-        'portfolio-dev.eba-wnpfvcpz.us-west-2.elasticbeanstalk.com',
+        'portfolio-prod.eba-gkts6xma.eu-west-2.elasticbeanstalk.com',
     ]
 
 

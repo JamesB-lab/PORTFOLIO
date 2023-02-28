@@ -31,7 +31,7 @@ class EmailForm(forms.Form):
         message = self['message'].value()
         # Configured
         subject = 'Portfolio contact form'
-        noreply_email = 'James Booth <noreply@mail.nuggetmuffin.tech>'
+        noreply_email = 'James Booth <noreply@mail.jbooth.dev>'
         my_email = 'j.r.booth01@gmail.com'
         full_message = f'Message from: {name}\n'
         f'Company: {company}'

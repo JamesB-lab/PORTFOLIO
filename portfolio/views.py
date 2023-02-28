@@ -1,6 +1,8 @@
 from django.shortcuts import render
-from django.views.generic import DetailView, ListView, TemplateView
+from django.urls import reverse_lazy
+from django.views.generic import DetailView, FormView, ListView, TemplateView
 
+from .email import EmailForm
 from .models import Post
 
 
@@ -12,8 +14,14 @@ class AboutPageView(TemplateView):
     template_name = 'about.html'
 
 
-class CVPageView(TemplateView):
+class CVPageView(FormView):
     template_name = 'cv.html'
+    form_class = EmailForm
+    success_url = reverse_lazy('cv')
+
+    def form_valid(self, form):
+        form.send_email()
+        return super().form_valid(form)
 
 
 class BlogListView(ListView):

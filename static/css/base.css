@@ -14,20 +14,6 @@ body {
   background-color: #01284a;
 }
 
-header h1 a {
-  color: red;
-  text-decoration: none;
-}
-
-.nav-left {
-  margin-right: auto;
-}
-
-.nav-right {
-  display: flex;
-  padding-top: 2rem;
-}
-
 .post-entry {
   margin-bottom: 2rem;
 }
@@ -53,24 +39,6 @@ header h1 a {
 
 .navbar-brand {
   margin-left: 16px;
-}
-
-.wrapping_div {
-  display: flex;
-}
-
-.my_card {
-  margin-left: 130px;
-  margin-top: 50px;
-}
-
-.welcome_text {
-  color: whitesmoke;
-  justify-content: right;
-  margin-top: 270px;
-  margin-left: 50px;
-  margin-right: 50px;
-  max-width: 600px;
 }
 
 .wrapper_about {

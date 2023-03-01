@@ -1,15 +1,13 @@
 {% extends 'base.html' %}
 {% load static %}
-
-<head>
-    <link rel="stylesheet" href= "{% static 'css/base.css' %}">
-</head>
-
+{% block extrahead %}
+<link rel="stylesheet" href= "{% static 'css/landing.css' %}">
+{% endblock extrahead %}
 {% block content %}
 
 {% comment %} <h1>Test landing</h1> {% endcomment %}
 <div class ="wrapping_div">
-<div class="card my_card" style="width: 18rem;">
+<div class="card summary" style="width: 18rem;">
     <img class="card-img-top" src="{% static 'img/headshot.jpg' %}" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">James Booth | Data Scientist & Python Developer</h5>
@@ -18,7 +16,7 @@
   </div>
 
 
-<div class ="welcome_text">
+<div class ="welcome-text">
     <h2>Hi, I'm James</h2>
     <p>Welcome to my personal site.</p>
     

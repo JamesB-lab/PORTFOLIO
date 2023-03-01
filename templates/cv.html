@@ -1,33 +1,44 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{% block extrahead %}
+<link rel="stylesheet" href= "{% static 'css/cv.css' %}">
+{% endblock extrahead %}
 {% block content %}
-
-<div class="cv_wrapper">
-  <div class="container_contact">
+<div class="cv-wrapper">
+  <div class="container-contact">
     <form method="post" action="{% url 'cv' %}">
       {% csrf_token %}
       {{ form }}
       <input type="submit" value="Submit">
     </form>
   </div>
-  <div class="card contact_card" style="width: 18rem;">
+  <div class="card" style="width: 18rem;">
     <img class="card-img-top" src="{% static 'img/headshot.jpg' %}" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">James Booth | Data Scientist & Python Developer</h5>
-      <div class="contact_card_grid">
-        <p>CV</p><a class="nav-link" href="{% static 'JBooth_CV.pdf' %}" download><i class="fa fa-download"
-            aria-hidden="true"></i></a>
-        <p>E-mail</p><a class="contact_email" target="_blank">j.r.booth01@gmail.com</a>
-        <p>Phone</p><a href="tel:+447720266727">+44 7720266727</a>
-        <p>Github</p><a class="nav-link" href="https://github.com/JamesB-lab" target="_blank"><i class="fa fa-github"
-            style="font-size:28px; padding-left: 0px;"></i></a>
-        <p>LinkedIn</p><a class="nav-link" href="https://www.linkedin.com/in/james-booth-817885151/" target="_blank"><i
-            class="fa fa-linkedin-square pl-0" style="font-size:28px; padding-left: 0px;"></i></a>
+      <div class="contact-card-grid">
+        <p>CV</p>
+        <a class="nav-link" href="{% static 'JBooth_CV.pdf' %}" download>
+          <i class="fa fa-download" aria-hidden="true"></i>
+        </a>
+        <p>E-mail</p>
+        <a href="mailto:j.r.booth01@gmail.com" target="_blank">
+          j.r.booth01@gmail.com
+        </a>
+        <p>Phone</p>
+        <a href="tel:+447720266727">
+          +44 7720266727
+        </a>
+        <p>Github</p>
+        <a class="nav-link" href="https://github.com/JamesB-lab" target="_blank">
+          <i class="icon fa fa-github"></i>
+        </a>
+        <p>LinkedIn</p>
+        <a class="nav-link" href="https://www.linkedin.com/in/james-booth-817885151/" target="_blank">
+          <i class="icon fa fa-linkedin-square pl-0"></i>
+        </a>
       </div>
     </div>
   </div>
 </div>
-
-
 {% endblock content %}

@@ -1,0 +1,41 @@
+.wrapper-post {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 0 auto;
+    max-width: auto;
+    justify-items: center;
+    margin-top: 30px;
+}
+
+.post-detail-card {
+    width: 80%;
+    max-width: 800px;
+}
+
+.post-body pre {
+    white-space: pre-wrap;
+    background-color: black;
+    color: #31b4af;
+    padding: 15px;
+}
+
+.post-body img {
+    max-width: 100%;
+    width: 100%;
+}
+
+.post-body p {
+    margin-bottom: 20px;
+}
+
+.post-body th {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.post-body table {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    width: 80%;
+}

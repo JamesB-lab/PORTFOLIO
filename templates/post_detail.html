@@ -1,27 +1,20 @@
 <!-- templates/post-detail.html-->
 {% extends 'base.html' %}
 {% load static %}
-
+{% block extrahead %}
+<link rel="stylesheet" href= "{% static 'css/post.css' %}">
+{% endblock extrahead %}
 {% load markdown_extras %}
-
 {% block content %}
-
-<div class="wrapper_post-detail">
+<div class="wrapper-post">
     <div class="card post-detail-card">
         <img class="card-img-top" src="{% static post.imagePath %}" alt="Card image cap">
         <div class="card-body">
-          <h5 class="card-title"></h5>
-          </div>
-          <div class="post-entry">
-            <h2>{{ post.title }}</h2>
-            <div>{{ post.body | markdown | safe }}</div>
-        </div>
+            <h2 class="card-title">{{ post.title }}</h2>
+            <div class="post-body">
+                {{ post.body | markdown | safe }}
+            </div>
         </div>
     </div>
 </div>
-
-
-
-
-
 {% endblock content %}

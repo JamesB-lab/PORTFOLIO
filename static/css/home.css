@@ -30,3 +30,22 @@
 .skill-badges i {
     padding-right: 10px;
 }
+
+.icon {
+    display: inline-flex;
+    align-self: center;
+    padding-right: 10px;
+}
+
+.icon svg,
+.icon img {
+    height: 1em;
+    width: 1em;
+    fill: currentColor;
+}
+
+.icon.baseline svg,
+.icon.baseline img {
+    top: 0.125em;
+    position: relative;
+}

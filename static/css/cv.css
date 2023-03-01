@@ -52,6 +52,15 @@ input[type="submit"]:hover {
     background-color: #45a049;
 }
 
+label.required::after {
+    content: ' *';
+    color: red;
+}
+
+.errorlist {
+    color: red;
+}
+
 .contact-card-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;

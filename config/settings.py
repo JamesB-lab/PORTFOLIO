@@ -137,6 +137,8 @@ STATICFILES_DIRS = [str(BASE_DIR.joinpath('static'))]
 EMAIL_BACKEND = 'django_ses.SESBackend'
 AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+AWS_SES_REGION_NAME = 'eu-west-2'
+AWS_SES_REGION_ENDPOINT = f'email.{AWS_SES_REGION_NAME}.amazonaws.com'
 
 # Check configuration was properly set:
 if not DEBUG and AWS_ACCESS_KEY_ID is None:

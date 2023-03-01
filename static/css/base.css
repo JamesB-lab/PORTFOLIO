@@ -13,27 +13,3 @@ body {
   min-height: 100%;
   z-index: -1;
 }
-
-.navbar-brand {
-  margin-left: 16px;
-}
-
-.fa-python {
-  padding-right: 13px;
-}
-
-.fa-github {
-  padding-left: 16px;
-}
-
-.fa-linkedin-square {
-  padding-left: 16px;
-}
-
-.fa-phone {
-  padding-left: 16px;
-}
-
-.fa-envelope {
-  padding-left: 16px;
-}

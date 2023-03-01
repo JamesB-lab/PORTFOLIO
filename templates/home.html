@@ -1,14 +1,16 @@
 <!--templates/home.html-->
 {% extends 'base.html' %}
 {% load static %}
-
+{% block extrahead %}
+<link rel="stylesheet" href= "{% static 'css/home.css' %}">
+{% endblock extrahead %}
 {% block content %}
-<div class="wrapper_post-entries">
+<div class="wrapper-home">
     {% for post in object_list %}
-    <div class="card post-entry" style="width: 50%;">
+    <div class="card post-card">
         <a class="nav-link" href="{% url 'post_detail' post.pk %}">
             <div class="card-header">{{ post.title }}</div>
-            <img class="card-img-top" src="{% static post.imagePath %}" alt="Card image cap">
+            <img class="card-img-top" src="{% static post.imagePath %}" alt="Card image">
             <div class="card-body">
                 <p class="card-text">{{ post.thumbnail }}</p>
             </div>

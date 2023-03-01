@@ -8,17 +8,10 @@
 }
 
 body {
+  padding-top: 60px;
   font-family: "Source Sans Pro", sans-serif;
   font-size: 18px;
   background-color: #01284a;
-}
-
-header {
-  border-bottom: 1px solid #999;
-  /* margin-bottom: 2rem; */
-  display: flex;
-  background-color: #999;
-  width: 100%;
 }
 
 header h1 a {
@@ -131,13 +124,6 @@ header h1 a {
 
 .fa-envelope {
   padding-left: 16px;
-}
-
-.button-links {
-  display: flex;
-  justify-content: right;
-  width: 100%;
-  margin-right: 16px;
 }
 
 /* Style inputs with type="text", select elements and textareas */
@@ -288,10 +274,10 @@ pre {
 }
 
 label.required::after {
-    content: ' *';
-    color: red;
+  content: ' *';
+  color: red;
 }
 
 .errorlist {
-    color: red;
+  color: red;
 }

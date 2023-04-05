@@ -1,36 +1,45 @@
 .wrapper-about {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin: 0 auto;
-    max-width: 940px;
-    justify-items: center;
-    margin-top: 30px;
+  display: grid;
+  gap: 50px;
+  grid-template-columns: 1fr 1fr;
+  margin: 0 auto;
+  max-width: 940px;
+  justify-items: center;
+  margin-top: 30px;
 }
 
-.wrapper-about>div:nth-of-type(even) {
+@media only screen and (max-width: 800px) {
+  .wrapper-about {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .wrapper-about > div:nth-of-type(even) {
     grid-column: 2;
-}
+  }
 
-.wrapper-about>div:nth-of-type(1) {
+  .wrapper-about > div:nth-of-type(1) {
     grid-row: 1;
-}
+  }
 
-.wrapper-about>div:nth-of-type(2) {
+  .wrapper-about > div:nth-of-type(2) {
     grid-row: 2;
-}
+  }
 
-.wrapper-about>div:nth-of-type(3) {
+  .wrapper-about > div:nth-of-type(3) {
     grid-row: 3;
-}
+  }
 
-.wrapper-about>div:nth-of-type(4) {
+  .wrapper-about > div:nth-of-type(4) {
     grid-row: 4;
-}
+  }
 
-.wrapper-about>div:nth-of-type(5) {
+  .wrapper-about > div:nth-of-type(5) {
     grid-row: 5;
-}
+  }
 
-.wrapper-about>div:nth-of-type(6) {
+  .wrapper-about > div:nth-of-type(6) {
     grid-row: 6;
+  }
 }

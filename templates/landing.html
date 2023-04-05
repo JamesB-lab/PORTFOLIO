@@ -1,26 +1,28 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block extrahead %}
-<link rel="stylesheet" href= "{% static 'css/landing.css' %}">
+<link rel="stylesheet" href="{% static 'css/landing.css' %}">
 {% endblock extrahead %}
 {% block content %}
 
 {% comment %} <h1>Test landing</h1> {% endcomment %}
-<div class ="wrapping_div">
-<div class="card summary" style="width: 18rem;">
+<div class="wrapping_div">
+  <div class="card summary">
     <img class="card-img-top" src="{% static 'img/headshot.jpg' %}" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">James Booth | Data Scientist & Python Developer</h5>
-      <p class="card-text">Data scientist with a background in semiconductor process and manufacturing engineering. Experience in predictive analytics, modeling, machine learning, and data visualization. Looking to develop innovative solutions, work colaboratively & learn.</p>
+      <p class="card-text">Data scientist with a background in semiconductor process and manufacturing engineering.
+        Experience in predictive analytics, modeling, machine learning, and data visualization. Looking to develop
+        innovative solutions, work colaboratively & learn.</p>
     </div>
   </div>
 
 
-<div class ="welcome-text">
+  <div class="welcome-text">
     <h2>Hi, I'm James</h2>
     <p>Welcome to my personal site.</p>
-    
+
     <p>Feel free to download a copy of my CV, checkout the recent projects in my portfolio or contact me for a chat.</p>
-</div>
+  </div>
 </div>
 {% endblock content %}

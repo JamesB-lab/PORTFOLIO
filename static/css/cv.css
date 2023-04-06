@@ -1,6 +1,8 @@
 .cv-wrapper {
     display: flex;
     width: 100%;
+    gap: 50px;
+    padding: 50px;
     justify-content: space-between;
     padding-left: 90px;
     padding-right: 90px;
@@ -12,7 +14,18 @@
     border-radius: 5px;
     background-color: whitesmoke;
     padding: 20px;
-    max-width: 50%;
+    max-width: 500px;
+}
+
+.card {
+    width: 18rem;
+}
+
+@media only screen and (max-width: 1110px) {
+    .cv-wrapper {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
 }
 
 /* Style inputs with type="text", select elements and textareas */

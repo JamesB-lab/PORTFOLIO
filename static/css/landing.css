@@ -1,17 +1,29 @@
 .wrapping_div {
     display: flex;
+    padding: 50px;
+    gap: 50px;
 }
 
 .summary {
+    width: 18rem;
+    max-width: 18rem;
     margin-left: 130px;
-    margin-top: 50px;
 }
 
 .welcome-text {
     color: whitesmoke;
-    justify-content: right;
-    margin-top: 270px;
-    margin-left: 50px;
-    margin-right: 50px;
     max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 1110px) {
+    .wrapping_div {
+        flex-direction: column-reverse;
+    }
+
+    .summary {
+        margin-left: 0;
+    }
 }

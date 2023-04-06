@@ -43,6 +43,6 @@ class EmailForm(forms.Form):
             subject=subject,
             message=full_message,
             from_email=noreply_email,
-            recipient_list=[their_email, my_email],
+            recipient_list=[my_email],
             fail_silently=False,
         )

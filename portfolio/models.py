@@ -3,6 +3,7 @@ from django.utils.timezone import now
 
 
 class Post(models.Model):
+    id = models.AutoField(primary_key=True)
 
     # Only active posts will be shown
     active = models.BooleanField(default=True)

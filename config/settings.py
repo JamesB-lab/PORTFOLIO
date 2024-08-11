@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 import os
 from pathlib import Path
+from config.config import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,19 +22,29 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get(
-    'DJANGO_SECRET_KEY', 'df2+a6xxc$$$o)!9fd&r@$pxn8brrmcru+n7kp!e795zhkqa2q')
+SECRET_KEY = config.django.secret_key
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
+DEBUG = config.django.debug
 
-ALLOWED_HOSTS = []
-
-if not DEBUG:
-    ALLOWED_HOSTS = [
-        'jbooth.dev',
-        'portfolio-prod.eba-gkts6xma.eu-west-2.elasticbeanstalk.com',
-    ]
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+CSRF_TRUSTED_ORIGINS = [
+    'http://0.0.0.0',
+    'http://127.0.0.1',
+    'https://*.awsapprunner.com',
+    'https://*.elasticbeanstalk.com',
+    'https://jbooth.dev',
+    'https://*.jbooth.dev',
+]
+ALLOWED_HOSTS = [
+    '0.0.0.0',
+    '127.0.0.1',
+    '.awsapprunner.com',
+    '.elasticbeanstalk.com',
+    'jbooth.dev',
+    'www.jbooth.dev',
+]
 
 
 # Application definition
@@ -45,6 +56,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'storages',
     'portfolio',
 ]
 
@@ -56,6 +68,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -89,6 +102,29 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+
+STORAGES = {
+    'default': {
+        'BACKEND': 'django.core.files.storage.FileSystemStorage',
+    },
+    'staticfiles': {
+        'BACKEND': 'storages.backends.s3.S3StaticStorage',
+        'OPTIONS': {
+            'access_key': config.aws.access_key.id,
+            'secret_key': config.aws.access_key.secret,
+            'bucket_name': config.aws.s3.bucket_name,
+            'querystring_expire': config.aws.s3.expiration,
+            'region_name': config.aws.s3.region_name,
+            'signature_version': config.aws.s3.signature_version,
+            'custom_domain': config.aws.cloudfront.custom_domain,
+            'cloudfront_key_id': config.aws.cloudfront.signer.id,
+            'cloudfront_key': config.aws.cloudfront.signer.private_key,
+            'default_acl': None,
+            'querystring_auth': True,
+            'location': config.aws.s3.static_location,
+        },
     }
 }
 
@@ -129,9 +165,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-# STATIC_ROOT = BASE_DIR / 'staticroot'
-STATIC_URL = 'static/'
-STATICFILES_DIRS = [str(BASE_DIR.joinpath('static'))]
+STATIC_URL = f'/{config.aws.cloudfront.custom_domain}/{config.aws.s3.static_location}/'
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+# Default primary key field type
+# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # https://medium.com/hackernoon/the-easiest-way-to-send-emails-with-django-using-ses-from-aws-62f3d3d33efd
 EMAIL_BACKEND = 'django_ses.SESBackend'
@@ -139,9 +182,3 @@ AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 AWS_SES_REGION_NAME = 'eu-west-2'
 AWS_SES_REGION_ENDPOINT = f'email.{AWS_SES_REGION_NAME}.amazonaws.com'
-
-# Check configuration was properly set:
-if not DEBUG and AWS_ACCESS_KEY_ID is None:
-    raise Exception('empty environment variable for AWS_ACCESS_KEY_ID')
-if not DEBUG and AWS_SECRET_ACCESS_KEY is None:
-    raise Exception('empty environment variable for AWS_SECRET_ACCESS_KEY')

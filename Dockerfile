@@ -32,6 +32,5 @@ RUN mkdir -p staticfiles
 
 # Run the application
 EXPOSE 8000
-ENV DJANGO_DEBUG=False
 ENTRYPOINT ["gunicorn"]
-CMD ["-b", "0.0.0.0:8000", "--workers", "2", "--timeout", "0","config.wsgi"]
+CMD ["-b", "0.0.0.0:8000", "--workers", "2", "--worker-class", "gevent", "config.wsgi"]

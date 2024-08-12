@@ -13,6 +13,7 @@ django-storages = "*"
 boto3 = "*"
 cryptography = "*"
 dataclasses-json = "*"
+gevent = "*"
 
 [dev-packages]
 

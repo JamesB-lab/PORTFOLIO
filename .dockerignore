@@ -13,7 +13,6 @@ __pycache__
 *.pyc
 
 # django
-db.sqlite3
 /static/
 staticfiles
 

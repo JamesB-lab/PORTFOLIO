@@ -39,6 +39,8 @@ serve-prod: check
 	gunicorn \
 		-b 127.0.0.1:8000 \
 		--workers 2 \
+		--worker-class gevent \
+		--timeout 5 \
 		--log-level debug \
 		config.wsgi
 

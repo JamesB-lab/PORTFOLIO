@@ -2,6 +2,7 @@ from django import forms
 from django.conf import settings
 from django.core.mail import send_mail
 from django.core.validators import validate_email
+from django.template.loader import get_template
 
 
 class EmailForm(forms.Form):
@@ -33,16 +34,16 @@ class EmailForm(forms.Form):
         subject = 'Portfolio contact form'
         noreply_email = 'James Booth <noreply@mail.jbooth.dev>'
         my_email = 'j.r.booth01@gmail.com'
-        full_message = f'Message from: {name}\n'
-        f'Company: {company}'
-        f'Email: {their_email}'
-        f'Phone: {phone}'
-        f'Location: {location}'
-        f'Message:\n{message}'
+        data = [{'label': self.fields.get(key).label, 'value': value} for key, value in self.cleaned_data.items()]
+        context = {'data': data}
+        text_template = get_template('email.txt')
+        text_message=text_template.render(context)
+        html_template = get_template('email.html')
+        html_message=html_template.render(context)
         send_mail(
             subject=subject,
-            message=full_message,
+            message=text_message,
             from_email=noreply_email,
-            recipient_list=[my_email],
+            recipient_list=[their_email, my_email],
             fail_silently=False,
         )

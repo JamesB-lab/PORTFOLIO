@@ -1,5 +1,26 @@
+# VS code
+.vscode
+
+# Environment
+.env
+*.pem
+secrets.json
+config.json
+
+# python
+.venv
+__pycache__
+*.pyc
+
+# django
+db.sqlite3
+/static/
+staticfiles
+
+# mac
+.DS_Store
+
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
-.git
-.gitignore
-/static/
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml

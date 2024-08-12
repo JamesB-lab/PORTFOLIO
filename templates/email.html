@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+
+<html lang="en" class="h-100">
+  <head></head>
+  <body>
+    <h1>Thanks for contacting Runvive!</h1>
+    <table>
+      {% for field in data %}
+        <tr>
+          <td>{{ field.label }}</td>
+          <td>{{ field.value }}</td>
+        </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>

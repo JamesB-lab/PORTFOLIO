@@ -16,9 +16,15 @@ generate-django-secret-key:
 read-private-key:
 	@python3 read_private_key.py
 
+.PHONY: upload-config-secret
+upload-config-secret:
+	aws secretsmanager put-secret-value \
+    --secret-id portfolio.prod \
+    --secret-string file://config.json
+
 .PHONY: check
 check:
-	DJANGO_DEBUG=True python3 manage.py check --fail-level WARNING
+	python3 manage.py check --fail-level WARNING
 
 .PHONY: collectstatic
 collectstatic:
@@ -26,11 +32,15 @@ collectstatic:
 
 .PHONY: serve-dev
 serve-dev:
-	DJANGO_DEBUG=True python manage.py runserver
+	python manage.py runserver
 
 .PHONY: serve-prod
 serve-prod: check
-	gunicorn -b 127.0.0.1:8000 --workers 2 config.wsgi
+	gunicorn \
+		-b 127.0.0.1:8000 \
+		--workers 2 \
+		--log-level debug \
+		config.wsgi
 
 .PHONY: docker-build
 docker-build:

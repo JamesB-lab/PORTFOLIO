@@ -1,0 +1,3 @@
+{% for field in data %}
+  {{ field.label }}: {{ field.value }}
+{% endfor %}

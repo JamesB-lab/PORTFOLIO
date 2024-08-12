@@ -28,6 +28,7 @@ USER appuser
 
 # Install application into container
 COPY . .
+RUN mkdir -p staticfiles
 
 # Run the application
 EXPOSE 8000

@@ -14,14 +14,14 @@ class AboutPageView(TemplateView):
     template_name = 'about.html'
 
 
-class CVPageView(FormView):
+class CVPageView(TemplateView):
     template_name = 'cv.html'
-    form_class = EmailForm
-    success_url = reverse_lazy('cv')
+    # form_class = EmailForm
+    # success_url = reverse_lazy('cv')
 
-    def form_valid(self, form):
-        form.send_email()
-        return super().form_valid(form)
+    # def form_valid(self, form):
+    #     form.send_email()
+    #     return super().form_valid(form)
 
 
 class BlogListView(ListView):

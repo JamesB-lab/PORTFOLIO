@@ -5,6 +5,7 @@
 {% endblock extrahead %}
 {% block content %}
 <div class="cv-wrapper">
+  {% comment %}
   <div class="container-contact">
     <form method="post" action="{% url 'cv' %}">
       {% csrf_token %}
@@ -12,6 +13,7 @@
       <input type="submit" value="Submit">
     </form>
   </div>
+  {% endcomment %}
   <div class="card">
     <img class="card-img-top" src="{% static 'img/headshot.jpg' %}" alt="Card image cap">
     <div class="card-body">
